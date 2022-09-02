@@ -9,9 +9,9 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-    - hosts:
-       - app-placeholder
-      secretName: app-placeholder-tls
+    - secretName: app-placeholder-tls
+      hosts:
+        - app-placeholder
   rules:
     - host: app-placeholder
       http:
