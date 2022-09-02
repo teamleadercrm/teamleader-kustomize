@@ -11,6 +11,7 @@ spec:
   tls:
     - hosts:
        - app-placeholder
+      secretName: app-placeholder-tls
   rules:
     - host: app-placeholder
       http:
