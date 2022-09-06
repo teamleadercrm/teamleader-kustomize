@@ -39,5 +39,3 @@ spec:
             items:
               - key: nutcracker.yml
                 path: nutcracker.yml
-          resources:
-  selector:

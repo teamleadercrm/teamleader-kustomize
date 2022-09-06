@@ -34,5 +34,3 @@ spec:
               port: nginx
             initialDelaySeconds: 5
             timeoutSeconds: 5
-          resources:
-  selector:

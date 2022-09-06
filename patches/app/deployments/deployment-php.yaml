@@ -24,5 +24,3 @@ spec:
               port: php
             initialDelaySeconds: 10
             timeoutSeconds: 5
-          resources:
-  selector:
