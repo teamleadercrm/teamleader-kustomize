@@ -32,3 +32,5 @@ spec:
               port: node
             initialDelaySeconds: 10
             timeoutSeconds: 5
+          resources:
+  selector:
