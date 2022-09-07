@@ -32,10 +32,3 @@ spec:
               port: 22222
             initialDelaySeconds: 15
             periodSeconds: 20
-      volumes:
-        - name: app-twemproxy-config
-          configMap:
-            name: app
-            items:
-              - key: nutcracker.yml
-                path: nutcracker.yml
