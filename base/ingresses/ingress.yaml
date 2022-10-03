@@ -3,7 +3,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app
+  name: ing
   annotations:
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/auth-signin: https://oauth2-proxy.tool.teamleader.eu/oauth2/start?rd=https://$host$request_uri$is_args$args
@@ -11,17 +11,17 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-    - secretName: app-placeholder-tls
+    - secretName: ing-placeholder-tls
       hosts:
-        - app-placeholder
+        - ing-placeholder
   rules:
-    - host: app-placeholder
+    - host: ing-placeholder
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: app
+                name: svc
                 port:
                   number: 80

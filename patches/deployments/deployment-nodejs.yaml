@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app
+  name: dep
 spec:
   template:
     spec:
@@ -15,7 +15,7 @@ spec:
             - name: ENVIRONMENT
               valueFrom:
                 configMapKeyRef:
-                  name: app
+                  name: cm
                   key: environment
           ports:
             - name: node
