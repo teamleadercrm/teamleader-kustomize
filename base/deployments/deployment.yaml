@@ -21,13 +21,13 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: app
-  spec:
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: lifecycle
-                operator: In
-                values:
-                - "Ec2Spot"
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: lifecycle
+                  operator: In
+                  values:
+                  - "Ec2Spot"
