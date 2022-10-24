@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: dep
+  name: deploy
   labels:
     app.kubernetes.io/name: app
 spec:
@@ -21,3 +21,12 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: app
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: lifecycle
+              operator: In
+              values:
+              - "Ec2Spot"
