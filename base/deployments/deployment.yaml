@@ -24,10 +24,10 @@ spec:
     spec:
       affinity:
         nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
+          requiredDuringSchedulingIgnoredDuringExecution:
               nodeSelectorTerms:
-                - matchExpressions:
-                  - key: lifecycle
-                    operator: In
-                    values:
-                    - "Ec2Spot"
+              - matchExpressions:
+                - key: lifecycle
+                  operator: In
+                  values:
+                  - "Ec2Spot"
