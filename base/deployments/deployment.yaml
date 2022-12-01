@@ -4,6 +4,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: deploy
+  annotations:
+    reloader.stakater.com/search: "true"
   labels:
     app.kubernetes.io/name: app
 spec:
