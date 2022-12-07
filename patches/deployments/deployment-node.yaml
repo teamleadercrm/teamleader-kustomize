@@ -8,8 +8,8 @@ spec:
   template:
     spec:
       containers:
-        - name: nodejs
-          image: nodejs
+        - name: node
+          image: node
           imagePullPolicy: IfNotPresent
           env:
             - name: ENVIRONMENT
