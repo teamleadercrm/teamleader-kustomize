@@ -11,12 +11,6 @@ spec:
         - name: node
           image: node
           imagePullPolicy: IfNotPresent
-          env:
-            - name: ENVIRONMENT
-              valueFrom:
-                configMapKeyRef:
-                  name: cm
-                  key: environment
           ports:
             - name: node
               containerPort: 3001
