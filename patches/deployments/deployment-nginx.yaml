@@ -13,9 +13,9 @@ spec:
           imagePullPolicy: IfNotPresent
           command: ["/bin/sh", "-c", "/usr/local/bin/entrypoint.sh"]
           env:
-            - name: node_dns
+            - name: NODE_DNS
               value: "127.0.0.1"
-            - name: php_dns
+            - name: PHP_DNS
               value: "127.0.0.1"
           ports:
             - name: nginx
