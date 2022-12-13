@@ -11,24 +11,16 @@ spec:
         - name: node
           image: node
           imagePullPolicy: IfNotPresent
-          env:
-            - name: ENVIRONMENT
-              valueFrom:
-                configMapKeyRef:
-                  name: cm
-                  key: environment
           ports:
             - name: node
               containerPort: 3001
           livenessProbe:
-            httpGet:
-              path: /health_check
+            tcpSocket:
               port: node
             initialDelaySeconds: 10
             timeoutSeconds: 5
           readinessProbe:
-            httpGet:
-              path: /health_check
+            tcpSocket:
               port: node
-            initialDelaySeconds: 10
+            initialDelaySeconds: 5
             timeoutSeconds: 5
