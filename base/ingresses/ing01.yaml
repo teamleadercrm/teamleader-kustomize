@@ -20,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: svc
+                name: svc01
                 port:
                   number: 80
