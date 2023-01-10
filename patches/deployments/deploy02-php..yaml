@@ -1,0 +1,26 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy02
+spec:
+  template:
+    spec:
+      containers:
+        - name: php
+          image: php
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: php
+              containerPort: 9000
+          livenessProbe:
+            tcpSocket:
+              port: php
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
+          readinessProbe:
+            tcpSocket:
+              port: php
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
