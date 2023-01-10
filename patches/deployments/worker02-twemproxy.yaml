@@ -1,0 +1,34 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker02
+spec:
+  template:
+    spec:
+      containers:
+        - name: twemproxy
+          image: teamleader/twemproxy:0.4.1
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: app-twemproxy-config
+              mountPath: "/opt"
+          args:
+            - "/usr/sbin/nutcracker"
+            - "-c"
+            - "/opt/nutcracker.yml"
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "sleep 15"]
+          livenessProbe:
+            tcpSocket:
+              port: 22222
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 22222
+            initialDelaySeconds: 15
+            periodSeconds: 20
