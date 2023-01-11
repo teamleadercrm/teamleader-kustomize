@@ -11,9 +11,6 @@ spec:
         - name: twemproxy
           image: teamleader/twemproxy:0.4.1
           imagePullPolicy: IfNotPresent
-          volumeMounts:
-            - name: app-twemproxy-config
-              mountPath: "/opt"
           args:
             - "/usr/sbin/nutcracker"
             - "-c"
